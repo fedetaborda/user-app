@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <title>Users | Crud</title>
+
+
+</head>
+
+<body class="top-navigation">
+
+    <div id="wrapper">
+        <div id="page-wrapper" class="gray-bg">
+        <div class="wrapper wrapper-content">
+            <div class="container">
+
+
+                <div class="text-center">
+                    <h1 class="text-navy">Crud de Usuarios</h1>
+                    <h2>Utilizando
+                        <strong> Angular </strong> + <strong> FireBase </strong>
+                    </h2>
+                    <img class="img" src="../assets/images.png">
+                </div>
+
+
+                <div class="row">
+
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-content">
+                                <div class="row">
+                                    <div class="col-sm-9 m-b-xs">
+                                        <button [routerLink]="['/user/','nuevo']"
+                                        type="button" class="btn btn-sm btn-primary"> Nuevo Usuario</button>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <span>Cantidad Total de Registros: <Strong>{{ reg }}</Strong> </span>
+                                    </div>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>USER</th>
+                                            <th>APELLIDO </th>
+                                            <th>NOMBRE </th>
+                                            <th>EDAD </th>
+                                            <th>FECHA NAC. </th>
+                                            <th>DOMICILIO </th>
+                                            <th>TELEFONO</th>
+                                            <th>CIUDAD</th>
+                                            <th>PAIS</th>
+                                            <th></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr *ngFor="let k of users | keys; let i = index">
+                                            <td>{{ i+1 }}</td>
+                                            <td><img class="img-circle img-40" src="{{ users[k].img }}"></td>  
+                                            <td id="capitalize">{{ users[k].apellido }}</td>
+                                            <td id="capitalize">{{ users[k].nombre }}</td>
+                                            <td>{{ users[k].edad }}</td>
+                                            <td>{{ users[k].fecha_nac }}</td>
+                                            <td id="capitalize">{{ users[k].domicilio }}</td>
+                                            <td>{{ users[k].tel }}</td>
+                                            <td id="capitalize">{{ users[k].ciudad }}</td>
+                                            <td id="capitalize">{{ users[k].pais }}</td>
+                                            <td>
+                                                <button type="button" class="btn btn-default btn-sm" [routerLink]="['/user/', k]"><i class="fa fa-pencil" aria-hidden="true"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-default btn-sm" (click)="delete(k)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                        <br>
+                                    </table>
+                                </div>
+
+                                <div *ngIf="loading"
+                                        class="alert alert-warning" role="alert">
+                                        <h4 class="alert-heading">Cangando Datos <strong>Espere por favor...</strong> </h4>
+                                         <p>La aplicacion esta descangando la informacion de Fire Base.. </p>
+                                </div>
+
+                                <div *ngIf="(users  | keys).length === 0 && !loading"
+                                    class="alert alert-danger" role="alert">
+                                    <h4 class="alert-heading">No existen datos para mostrar..</h4>
+                                    <p>Puede cargar Usuarios desde <strong> <a [routerLink]="['/user/','nuevo']"> Aqui..</a> </strong></p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="footer">
+            <div class="pull-right">
+                Boostraps 3
+            </div>
+            <div>
+                <strong>Desarrollo</strong> federicomtaborda@gmail.com &copy; 2017-2018
+            </div>
+        </div>
+
+        </div>
+        </div>
+<script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

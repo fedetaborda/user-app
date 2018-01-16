@@ -6,6 +6,30 @@
  *   version 2.7.1
  *
 */
+
+.img{
+  width: 190px;
+  padding:5px;  
+}
+
+#capitalize{
+text-transform: capitalize;
+}
+
+#loading{
+  padding: 20px;
+}
+
+.img-40{
+height: 40px;
+width: 40px;
+}
+
+.accion{
+margin-top: 15px;
+margin-bottom: 40px;
+}
+
 h1,
 h2,
 h3,
@@ -38,47 +62,7 @@ h5 {
   margin-top: 5px;
   font-weight: 600;
 }
-.nav > li > a {
-  color: #a7b1c2;
-  font-weight: 600;
-  padding: 14px 20px 14px 25px;
-}
-.nav.navbar-right > li > a {
-  color: #999c9e;
-}
-.nav > li.active > a {
-  color: #ffffff;
-}
-.navbar-default .nav > li > a:hover,
-.navbar-default .nav > li > a:focus {
-  background-color: #293846;
-  color: white;
-}
-.nav .open > a,
-.nav .open > a:hover,
-.nav .open > a:focus {
-  background: #fff;
-}
-.nav.navbar-top-links > li > a:hover,
-.nav.navbar-top-links > li > a:focus {
-  background-color: transparent;
-}
-.nav > li > a i {
-  margin-right: 6px;
-}
-.navbar {
-  border: 0;
-}
-.navbar-default {
-  background-color: transparent;
-  border-color: #2f4050;
-}
-.navbar-top-links li {
-  display: inline-block;
-}
-.navbar-top-links li:last-child {
-  margin-right: 40px;
-}
+
 .body-small .navbar-top-links li:last-child {
   margin-right: 0;
 }
@@ -89,7 +73,7 @@ h5 {
 .dropdown-menu {
   border: medium none;
   border-radius: 3px;
-  box-shadow: 0 0 3px rgba(86, 96, 117, 0.7);
+  box-shadow: 0 0 3px rgba(255, 255, 255, 0.7);
   display: none;
   float: left;
   font-size: 12px;
@@ -169,7 +153,7 @@ h5 {
 }
 .nav-header {
   padding: 33px 25px;
-  background-color: #2f4050;
+  background-color: #ffffff;
   background-image: url("patterns/header-profile.png");
 }
 .pace-done .nav-header {
@@ -4029,7 +4013,7 @@ table.table-mail tr td {
 /* BACKGROUNDS */
 .gray-bg,
 .bg-muted {
-  background-color: #f3f3f4;
+  background-color: #ffffff;
 }
 .white-bg {
   background-color: #ffffff;
